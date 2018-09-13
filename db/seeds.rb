@@ -1,0 +1,10 @@
+User.create(name: "1111", email: "1111@1111.com", password: "1111", password_confirmation: "1111")
+User.create(name: "2222", email: "2222@2222.com", password: "2222", password_confirmation: "2222")
+User.create(name: "3333", email: "3333@3333.com", password: "3333", password_confirmation: "3333")
+
+Blog.create(title: "1111のブログ", content: "今日もいい天気です。", user_id: User.find_by(name: "1111").id, likes_count: 0)
+Blog.create(title: "1111のブログ", content: "今日は曇っています。", user_id: User.find_by(name: "1111").id, likes_count: 0)
+Blog.create(title: "2222のブログ", content: "今日はカレーを食べました。", user_id: User.find_by(name: "2222").id, likes_count: 0)
+Blog.create(title: "2222のブログ", content: "今日はラーメンを食べました。。", user_id: User.find_by(name: "2222").id, likes_count: 0)
+Blog.create(title: "2222のブログ", content: "今日もカレーを食べました。明日もカレーを食べたいです。。", user_id: User.find_by(name: "2222").id, likes_count: 0)
+Blog.create(title: "3333のブログ", content: "zzz", user_id: User.find_by(name: "3333").id, likes_count: 0)

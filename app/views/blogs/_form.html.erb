@@ -1,0 +1,22 @@
+<%= form_with(model: @blog, url: new_or_edit_blog_path, local: true) do |form| %>
+  <div class="form_field">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1" id="title"><%= form.label :title, "タイトル" %></div>
+        <div class="col-md-4"><%= form.text_field :title %></div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
+  <div class="form_field">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1" id="title"><%= form.label :content, "内容" %></div>
+        <div class="col-md-4"><%= form.text_area :content, size: "50x3" %></div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
+  
+  <%= form.submit "投稿する" %>
+<% end %>

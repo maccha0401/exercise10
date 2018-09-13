@@ -1,0 +1,6 @@
+<h1>ユーザ画面</h1>
+<p>名前： <%= @user.name %></p>
+<p>メールアドレス： <%= @user.email %></p>
+<%= link_to "ブログ一覧", :root, type: "button", class: "btn btn-default" %>
+<%= link_to "ユーザ編集", edit_users_path, type: "button", class: "btn btn-default" %>
+<%= link_to "ユーザ削除", users_path, method: "delete", data:{confirm: "ユーザを削除しますか？"}, type: "button", class: "btn btn-default" %>

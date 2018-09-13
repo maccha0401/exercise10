@@ -1,0 +1,8 @@
+// ■validation エラー時の表示方
+.errors {
+  color: red;
+}
+// ■validation エラー時、label とinput がdiv で分かれ、改行されてしまうことへの処置
+.form_field .field_with_errors {
+  display: inline;
+}

@@ -1,0 +1,16 @@
+<% if logged_in? %>
+  <div id="star-<%= @blog.id %>"><%= render partial: "likes/like", locals: {blog: @blog} %></div>
+<% end %>
+<h1><%= @blog.title %></h1>
+<h2><%= User.find(@blog.user_id).name %></h2>
+<h2><pre><%= @blog.content %></pre></h2>
+
+<footer>
+  <button type="button" class="btn btn-success badge-pill"><%= link_to "ブログ一覧", blogs_path %></button>
+  <% if logged_in? %>
+    <% if @blog.user_id == current_user.id %>
+      <button type="button" class="btn btn-success badge-pill"><%= link_to "編集", edit_blog_path(@blog.id), method: :get %></button>
+      <button type="button" class="btn btn-success badge-pill"><%= link_to "削除", blog_path(@blog.id), method: :delete %></button>
+    <% end %>
+  <% end %>
+</footer>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mine04</title>
+    <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if logged_in? %>
+        <button type="button" class="btn btn-primary badge-pill"><%= link_to "トップページ", :root %></button>
+        <button type="button" class="btn btn-secondary badge-pill"><%= link_to "ブログの作成", new_blog_path %></button>
+        <button type="button" class="btn btn-success badge-pill"><%= link_to "お気に入り一覧", likes_path %></button>
+        <button type="button" class="btn btn-info badge-pill"><%= link_to "ユーザ情報", :mypage %></button>
+        <button type="button" class="btn btn-warning badge-pill"><%= link_to "ログアウト", users_delete_path(current_user.id), method: :delete %></button>
+      <% else %>
+        <button type="button" class="btn btn-primary badge-pill"><%= link_to "トップページ", :root %></button>
+        <button type="button" class="btn btn-secondary badge-pill"><%= link_to "ログイン", users_login_path %></button>
+        <button type="button" class="btn btn-info badge-pill"><%= link_to "ユーザ登録", new_users_path %></button>
+      <% end %>
+    </header>
+
+    <div class="content">
+      <!--■flash の表示-->
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: key) %>
+      <% end %>
+  
+      <%= yield %>
+    </div>
+  </body>
+</html>

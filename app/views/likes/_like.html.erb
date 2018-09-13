@@ -1,0 +1,6 @@
+<% like = current_user.likes.find_by(blog_id: blog.id) %>
+<% if like.present? %>
+  <span><%= blog.likes_count %> likes  </span><%= link_to "★", like_path(like.id), method: :delete, remote: true, class: "red-star" %>
+<% else %>
+  <span><%= blog.likes_count %> likes  </span><%= link_to "☆", likes_path(blog_id: blog.id), method: :post, remote: true, class: "white-star" %>
+<% end %>
