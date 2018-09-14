@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resource :users, except: [:index]
   get "/mypage", to: "users#show"
   resources :likes, only: [:index, :create, :destroy]
+  
+  mount LetterOpenerWeb::Engine, at:"/letter_opener" if Rails.env.development?
 end

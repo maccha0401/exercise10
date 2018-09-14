@@ -1,0 +1,5 @@
+<h1>ブログが作成されました。</h1>
+<br>
+<h2><%= @message.title %></h1>
+<h2><%= User.find(@message.user_id).name %></h2>
+<h2><pre><%= @message.content %></pre></h2>

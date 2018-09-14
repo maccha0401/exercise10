@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+group :development do
+  gem "letter_opener_web"
+end
 
 gem "bcrypt"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
