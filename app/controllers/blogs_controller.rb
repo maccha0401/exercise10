@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
     if @blog.save
-      BlogCreatedMailer.send_mail(@blog).deliver
+      BlogCreatedMailer.send_mail(@blog).deliver if ENV["RAILS_ENV"] == "development"
       redirect_to blog_path(@blog.id)
     else
       flash[:danger] = "ブログの作成に失敗しました。"
