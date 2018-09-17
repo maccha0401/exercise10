@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :blogs, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_blogs, through: :likes, source: :blog
+
+  mount_uploader :face, FaceUploader
 end

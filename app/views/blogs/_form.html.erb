@@ -17,6 +17,15 @@
       </div>
     </div>
   </div>
+  <div class="form_field">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1" id="title"><%= form.label :picture, "画像" %></div>
+        <div class="col-md-4"><%= form.file_field :picture, id: :blog_picture %></div>
+        <div class="col-md-7"></div>
+      </div>
+    </div>
+  </div>
   
   <%= form.submit "投稿する" %>
 <% end %>

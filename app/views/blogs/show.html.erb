@@ -4,6 +4,11 @@
 <h1><%= @blog.title %></h1>
 <h2><%= User.find(@blog.user_id).name %></h2>
 <h2><pre><%= @blog.content %></pre></h2>
+<% if ENV["RAILS_ENV"] == "development" %>
+  <pre>画像の名前①：<%=  @blog.picture %></pre>
+  <pre>画像の名前②：<%=  @blog[:picture] %></pre>
+<% end %>
+<pre><%= image_tag(@blog.picture) if @blog.picture.present? %></pre>
 
 <footer>
   <button type="button" class="btn btn-success badge-pill"><%= link_to "ブログ一覧", blogs_path %></button>

@@ -19,6 +19,10 @@
     <%= form.email_field :email %>
   </div>
   <div class="form_field">
+    <%= form.label :face, "写真" %>
+    <%= form.file_field :face %>
+  </div>
+  <div class="form_field">
     <%= form.label :password, "パスワード" %>
     <%= form.password_field :password %>
   </div>

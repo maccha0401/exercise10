@@ -9,6 +9,9 @@ group :development do
   gem "letter_opener_web"
 end
 
+gem "carrierwave"
+gem "mini_magick"
+
 gem "bcrypt"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
